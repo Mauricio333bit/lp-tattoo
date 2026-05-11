@@ -2,6 +2,7 @@ import { Navbar } from "./Components/NavBar";
 import { AboutSection } from "./Sections/AboutSection";
 import { FeaturedSection } from "./Sections/FeaturedSection";
 import { HeroSection } from "./Sections/HeroSection";
+import { TattooCareSection } from "./Sections/TattooCareSection";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <HeroSection />
       <AboutSection />
       <FeaturedSection/>
+      <TattooCareSection/>
     </main>
   );
 }
