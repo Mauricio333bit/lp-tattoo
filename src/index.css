@@ -38,3 +38,43 @@ button {
 section {
   width: 100%;
 }
+.hero {
+  background: linear-gradient(
+    135deg, 
+    #0a0a0a 0%, 
+    #1a1a2e 25%, 
+    #d4af37 50%, 
+    #ff6b35 75%, 
+    #0a0a0a 100%
+  );
+  background-size: 400% 400%;
+  animation: sunGlow 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes sunGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Overlay oscuro para legibilidad */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+

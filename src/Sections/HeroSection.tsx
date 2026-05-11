@@ -22,18 +22,18 @@ export const HeroSection = () => {
         <img
           src="/logo.png"
           alt="Ícaro Tattoo Studio"
-          className="mb-6 w-72 opacity-90"
+          className="mb-6 w-72 "
         />
 
 
         {/* Subtitle */}
         <p className="mt-4 text-xs uppercase tracking-[0.6em] text-[#C8A96B] md:text-sm">
-          Tattoo Studio
+          Vuela. Marca. Permanece.
         </p>
 
         {/* Description */}
         <p className="mt-8 max-w-xl text-sm leading-relaxed text-zinc-400 md:text-base">
-          Arte en la piel con estética minimalista, precisión y diseño exclusivo.
+           Te acompañamos a materializar lo que llevas dentro.
         </p>
 
         {/* CTA */}
