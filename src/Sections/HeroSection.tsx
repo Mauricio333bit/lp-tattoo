@@ -22,13 +22,9 @@ export const HeroSection = () => {
         <img
           src="/logo.png"
           alt="Ícaro Tattoo Studio"
-          className="mb-6 w-[120px] opacity-90"
+          className="mb-6 w-72 opacity-90"
         />
 
-        {/* Studio Name */}
-        <h1 className="text-7xl font-light tracking-[0.25em] text-white md:text-9xl">
-          ÍCARO
-        </h1>
 
         {/* Subtitle */}
         <p className="mt-4 text-xs uppercase tracking-[0.6em] text-[#C8A96B] md:text-sm">
