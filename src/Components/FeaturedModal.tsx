@@ -39,11 +39,11 @@ export const FeaturedModal = ({
 
               <div>
 
-                <p className="text-xs uppercase tracking-[0.4em] text-[#C8A96B]">
+                <p className="section-tag">
                   Categoría
                 </p>
 
-                <h2 className="mt-2 text-4xl text-white md:text-5xl">
+                <h2 className="section-title">
                   {title}
                 </h2>
 

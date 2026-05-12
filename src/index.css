@@ -78,3 +78,34 @@ section {
 
 
 
+@layer components {
+
+  .section-container {
+    @apply mx-auto max-w-7xl px-6;
+  }
+
+  .section-spacing {
+    @apply py-24 md:py-32;
+  }
+
+  .section-tag {
+    @apply mb-4 text-lg uppercase tracking-[0.4em] text-[#C8A96B];
+  }
+
+  .section-title { 
+    @apply text-4xl leading-tight text-white md:text-4xl xl:text-5xl;
+  }
+
+  .section-description {
+    @apply text-base leading-relaxed text-zinc-500 md:text-lg;
+  }
+
+  .card-title {
+    @apply text-2xl text-white md:text-3xl;
+  }
+
+  .input-base {
+    @apply w-full border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B];
+  }
+
+}

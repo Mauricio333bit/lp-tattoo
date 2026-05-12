@@ -19,6 +19,13 @@ export const ContactSection = () => {
   };
 
   const handleWhatsApp = () => {
+    if (!form.name || !form.zone || !form.idea) {
+      alert(
+        "Por favor, completa los campos obligatorios: Nombre, Zona a tatuar e Idea del tatuaje",
+      );
+      return;
+    }
+
     const message = `
 Hola Ícaro Tattoo Studio.
 
@@ -28,7 +35,7 @@ Zona a tatuar:
 ${form.zone}
 
 Tamaño aproximado:
-${form.width} cm x ${form.height} cm
+${form.width || "No especificado"} cm x ${form.height || "No especificado"} cm
 
 Idea del tatuaje:
 ${form.idea}
@@ -43,128 +50,116 @@ ${form.idea}
   };
 
   return (
-    <section className="bg-black px-6 py-32" id="contact">
-      <div className="mx-auto grid max-w-7xl gap-20 lg:grid-cols-2">
-        {/* Left */}
-        <div>
-          <p className="mb-6 text-sm uppercase tracking-[0.4em] text-[#C8A96B]">
-            Contacto
-          </p>
+    <section className="w-full bg-black py-32" id="contact">
+      {/* Título con ancho completo */}
+      <div className="mb-20 text-center">
+        <p className="mb-6 text-sm uppercase tracking-[0.4em] text-[#C8A96B]">
+          Contacto
+        </p>
 
-          <h2 className="max-w-lg text-5xl leading-tight text-white md:text-7xl">
-            Solicita tu turno.
-          </h2>
+        <h2 className="section-title">Solicita tu turno.</h2>
 
-          <div className="mt-10 h-[1px] w-24 bg-[#C8A96B]" />
-
-          <p className="mt-10 max-w-xl text-lg leading-relaxed text-zinc-500">
-            Cuéntanos tu idea y te acompañaremos en el proceso de diseñar una
-            pieza única.
-          </p>
+        <div className="mt-8 flex justify-center">
+          <div className="h-[1px] w-24 bg-[#C8A96B]" />
         </div>
 
-        {/* Form */}
-        <div className="border border-white/5 bg-white/[0.02] p-8 md:p-10">
-          <div className="grid gap-6">
-            {/* Nombre */}
-            <div>
-              <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-zinc-500">
-                Nombre
-              </label>
+        <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-500">
+          Cuéntanos tu idea y te acompañaremos en el proceso de diseñar una
+          pieza única.
+        </p>
+      </div>
 
+      {/* Formulario centrado ocupando el 80% del ancho */}
+      <div className="mx-auto w-4/5">
+        <div className="border border-white/5 bg-white/[0.02] p-6 md:p-8 lg:p-12">
+          <div className="grid gap-6 md:grid-cols-2 md:gap-8">
+            {/* ... resto del formulario igual que arriba ... */}
+            <div className="md:col-span-1">
+              <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-zinc-500">
+                Nombre *
+              </label>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Tu nombre"
+                required
                 className="w-full border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B]"
               />
             </div>
 
-            {/* Zona */}
-            <div>
+            <div className="md:col-span-1">
               <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-zinc-500">
-                Zona a tatuar
+                Zona a tatuar *
               </label>
-
               <input
                 type="text"
                 name="zone"
                 value={form.zone}
                 onChange={handleChange}
                 placeholder="Brazo, espalda, pierna..."
+                required
                 className="w-full border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B]"
               />
             </div>
 
-            {/* Tamaño aproximado */}
-            <div>
+            <div className="md:col-span-2">
               <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-zinc-500">
                 Tamaño aproximado
               </label>
-
               <div className="grid grid-cols-2 gap-4">
-                {/* Width */}
-                <div>
-                  <input
-                    type="number"
-                    name="width"
-                    value={form.width}
-                    onChange={handleChange}
-                    placeholder="Ancho (cm)"
-                    className="w-full border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B]"
-                  />
-                </div>
-
-                {/* Height */}
-                <div>
-                  <input
-                    type="number"
-                    name="height"
-                    value={form.height}
-                    onChange={handleChange}
-                    placeholder="Alto (cm)"
-                    className="w-full border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B]"
-                  />
-                </div>
+                <input
+                  type="number"
+                  name="width"
+                  value={form.width}
+                  onChange={handleChange}
+                  placeholder="Ancho (cm)"
+                  className="border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B]"
+                />
+                <input
+                  type="number"
+                  name="height"
+                  value={form.height}
+                  onChange={handleChange}
+                  placeholder="Alto (cm)"
+                  className="border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B]"
+                />
               </div>
             </div>
 
-            {/* Idea */}
-            <div>
+            <div className="md:col-span-2">
               <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-zinc-500">
-                Idea del tatuaje
+                Idea del tatuaje *
               </label>
-
               <textarea
                 name="idea"
                 value={form.idea}
                 onChange={handleChange}
                 rows={6}
                 placeholder="Describe tu idea..."
+                required
                 className="w-full resize-none border border-white/10 bg-black px-5 py-4 text-white outline-none transition focus:border-[#C8A96B]"
               />
             </div>
 
-            {/* Upload fake */}
-            <div>
+            <div className="md:col-span-2">
               <label className="mb-3 block text-xs uppercase tracking-[0.3em] text-zinc-500">
                 Imagen de referencia (opcional)
               </label>
-
-              <div className="flex h-32 items-center justify-center border border-dashed border-white/10 bg-black text-zinc-600">
-                Próximamente disponible
+              <div className="flex h-36 items-center justify-center border border-dashed border-white/10 bg-black text-zinc-600 transition hover:border-[#C8A96B]/30">
+                <span className="text-sm">Próximamente disponible</span>
               </div>
             </div>
 
-            {/* Button */}
-            <button
-              onClick={handleWhatsApp}
-              className="mt-4 border border-[#C8A96B] px-8 py-5 text-sm uppercase tracking-[0.4em] text-white transition duration-500 hover:bg-[#C8A96B] hover:text-black"
-            >
-              Enviar por WhatsApp
-            </button>
+            <div className="md:col-span-2">
+              <button
+                onClick={handleWhatsApp}
+                className="w-full border border-[#C8A96B] px-8 py-5 text-sm uppercase tracking-[0.4em] text-white transition duration-500 hover:bg-[#C8A96B] hover:text-black"
+              >
+                Enviar por WhatsApp
+              </button>
+            </div>
           </div>
         </div>
       </div>

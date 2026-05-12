@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { featuredCategories } from "../data/featuredCategories";
 import { CategoryCard } from "../Components/CategoryCard";
 import { FeaturedModal } from "../Components/FeaturedModal";
+import { Reveal } from "../Components/Reveal";
 
 
 const ChevronLeft = () => (
@@ -39,10 +40,10 @@ export const FeaturedSection = () => {
         {/* Header */}
         <div className="mb-20 flex flex-col justify-between gap-10 md:flex-row md:items-end">
           <div>
-            <p className="mb-4 text-md uppercase tracking-[0.4em] text-[#C8A96B]">
+            <p className="section-tag">
               Trabajos Destacados
             </p>
-            <h2 className="max-w-2xl text-3xl leading-tight text-white md:text-5xl">
+            <h2 className="section-title">
               Explora nuestros estilos.
             </h2>
           </div>
@@ -81,18 +82,20 @@ export const FeaturedSection = () => {
             scrollbarWidth: "none" // Para Firefox
           }}
         >
-          {featuredCategories.map((category) => (
+          {featuredCategories.map((category,index) => (
             <div
               key={category.id}
               // Cada tarjeta ocupa el 80% en móvil y 320px fijos en desktop
               // El snap-start asegura que al hacer scroll se alinee al inicio
               className="w-[80%] shrink-0 snap-start md:w-[320px]"
             >
+                <Reveal delay={index * 0.02} amount={0.6}>
               <CategoryCard
                 title={category.title}
                 image={category.coverImage}
                 onClick={() => setSelectedCategory(category)}
               />
+              </Reveal>
             </div>
           ))}
         </div>

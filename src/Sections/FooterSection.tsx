@@ -4,14 +4,8 @@ export const FooterSection = () => {
   return (
     <footer className="border-t border-white/5 bg-black px-6 pt-24">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-16 md:flex-row">
-        {/* Brand */}
-        <div className="flex items-center justify-center gap-5">
-          <img src="logo.png" alt="Ícaro Tattoo Studio" className="w-40" />
-
-          {/* Map */}
-        </div>
-         {/* Socials */}
-        <div>
+        {/* Socials */}
+        <div className="flex flex-col items-center">
           <p className="mb-6 text-sm uppercase tracking-[0.4em] text-[#C8A96B]">
             Redes
           </p>
@@ -27,6 +21,10 @@ export const FooterSection = () => {
             ))}
           </div>
         </div>
+        {/* Brand */}
+
+        <img src="logo.png" alt="Ícaro Tattoo Studio" className="w-40" />
+        {/* Map */}
         <div className="overflow-hidden border border-white/10 m-2">
           <iframe
             src="https://www.google.com/maps?q=-32.897684,-68.830525&z=17&output=embed"
