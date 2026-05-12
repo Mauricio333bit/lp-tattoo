@@ -1,6 +1,6 @@
 export const AboutSection = () => {
   return (
-    <section className="relative bg-black px-6 py-32">
+    <section className="relative bg-black px-6 py-32" id="about">
 
       <div className="mx-auto grid max-w-7xl gap-20 lg:grid-cols-2 lg:items-center">
 

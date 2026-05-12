@@ -1,6 +1,6 @@
 export const HeroSection = () => {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black" id="hero">
 
       {/* Background */}
       <img

@@ -34,7 +34,7 @@ export const FeaturedSection = () => {
   };
 
   return (
-    <section className="overflow-hidden bg-black px-6 py-32">
+    <section className="overflow-hidden bg-black px-6 py-32" id="works">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-20 flex flex-col justify-between gap-10 md:flex-row md:items-end">

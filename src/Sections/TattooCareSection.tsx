@@ -2,7 +2,7 @@ import { tattooCare } from "../data/tattooCare";
 
 export const TattooCareSection = () => {
   return (
-    <section className="bg-[#050505] px-6 py-32">
+    <section className="bg-[#050505] px-6 py-32" id="care">
 
       <div className="mx-auto max-w-7xl">
 
